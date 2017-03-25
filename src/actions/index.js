@@ -1,11 +1,9 @@
-let nextTodoId = 0
-
 export const ADD_TODO = 'ADD_TODO'
 export const REMOVE_TODO = 'REMOVE_TODO'
 
-export const addTodo = text => ({
+export const addTodo = (text, size) => ({
   type: ADD_TODO,
-  id: nextTodoId++,
+  id: size,
   text: text
 })
 

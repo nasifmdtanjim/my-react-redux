@@ -13,7 +13,6 @@ export const todos = {
 
 export const app = {
   margin: '2rem 0',
-  position: 'fixed',
   size: '30%',
   textAlign: 'center',
   left: '35%',
