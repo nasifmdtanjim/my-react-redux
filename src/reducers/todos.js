@@ -1,22 +1,20 @@
+import { ADD_TODO, REMOVE_TODO } from '../actions'
+
 const todos = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_TODO':
+    case ADD_TODO:
       return [
         ...state,
         {
-          todo: action.todo,
-          completed: false
+          id: action.id,
+          text: action.text
         }
-      ];
-    case 'TOGGLE_TODO':
-      return state.map((todo, id) => {
-        return (id === action.index) ? Object.assign({}, todo, {
-          completed: !todo.completed
-        }) : todo;
-      });
+      ]
+    case REMOVE_TODO:
+      return state.filter(todo => todo.id !== action.id)
     default:
-      return state;
+      return state
   }
 }
 
-export default todos;
+export default todos
