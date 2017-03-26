@@ -7,8 +7,7 @@ export const addTodo = (text, size) => ({
   text: text
 })
 
-export const removeTodo = todo => Object.assign(
-  {},
-  {type: REMOVE_TODO},
-  todo
-)
+export const removeTodo = id => ({
+  type: REMOVE_TODO,
+  id: id
+})

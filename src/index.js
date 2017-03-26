@@ -6,7 +6,10 @@ import reducer from './reducers'
 import data from './data'
 import TodoApp from './components/App.js'
 
-const store = createStore(reducer, data)
+const store = createStore(
+  reducer,
+  data
+)
 
 ReactDOM.render(
   <Provider store={store}>

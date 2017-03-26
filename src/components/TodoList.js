@@ -1,14 +1,16 @@
 import React from 'react'
 import * as todoStyles from '../styles'
+import Todo from '../components/Todo'
 
 const TodoList = ({ todos, removeTodo }) => (
   <table style={todoStyles.table}>
     <tbody>
       {todos.map(todo =>
-        <tr key={todo.id} style={todoStyles.todos}>
-          <td style={todoStyles.td}>{todo.text}</td>
-          <td><button style={todoStyles.crossButton} onClick={() => removeTodo(todo)}>X</button></td>
-        </tr>
+        <Todo
+          key={todo.id}
+          {...todo}
+          onClick={() => removeTodo(todo.id)}
+        />
       )}
     </tbody>
   </table>
