@@ -8,7 +8,8 @@ import TodoApp from './components/App.js'
 
 const store = createStore(
   reducer,
-  data
+  data,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
 ReactDOM.render(
